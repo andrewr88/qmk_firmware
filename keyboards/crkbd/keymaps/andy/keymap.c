@@ -88,59 +88,80 @@ combo_t key_combos[] = {
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_BASE] = LAYOUT_split_3x6_3_ex2(
-        KC_ESC,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_PSCR,    KC_HOME,  KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_QUOT,
+        KC_ESC,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,   KC_PSCR,    KC_HOME,   KC_Y,    KC_U,    KC_I,    KC_O,       KC_P,   KC_QUOT,
         KC_TAB,  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_END,     KC_INS,   KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, LT_MDIA_O,
-        KC_DEL,  KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                          KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_SLSH,
-                 MO_FUN,  LT_NAV_SPACE, MO_NUM,                                     OS_SHFT,     MO_NAV,   MO_SYMB
+        KC_DEL,  KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                          KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH,   KC_SLSH,
+                             MO_FUN, LT_NAV_SPACE, MO_NUM,                          OS_SHFT, MO_NAV, MO_SYMB
     ),
 
     [_SYMB] = LAYOUT_split_3x6_3_ex2(
-        KC_ESC,  KC_MINS, S(KC_MINS), KC_EQL,       S(KC_EQL), KC_BSLS, KC_PSCR,    KC_HOME,  KC_INS,  MW_UNDO, S(KC_7),    S(KC_8),   KC_DOT,  MW_PSTE,
-        KC_TAB,  KC_QUOT, S(KC_QUOT), KC_LEFT_ENCLOSE, KC_RIGHT_ENCLOSE, KC_GRV, KC_END,     KC_INS,   KC_PGUP, REV_COLON, OS_SHFT,    OS_CTRL,  OS_ALT,  OS_GUI,
-        KC_DEL,  KC_SCLN, S(KC_SCLN), KC_LBRC,      KC_RBRC,   KC_3GRV, KC_PGDN,    KC_MINS,  S(KC_1), S(KC_COMM), S(KC_DOT), S(KC_SLSH),
-                                        _______,     _______,   KC_ENT,              _______,   _______, _______
+        KC_ESC,  KC_MINS, S(KC_MINS),          KC_EQL,        S(KC_EQL), KC_BSLS,  KC_PSCR,  KC_HOME,    MW_UNDO, S(KC_7),    S(KC_8),    KC_DOT,    MW_PSTE,  KC_INS,
+        KC_TAB,  KC_QUOT, S(KC_QUOT), KC_LEFT_ENCLOSE, KC_RIGHT_ENCLOSE,  KC_GRV,   KC_END,   KC_INS,  REV_COLON, OS_SHFT,    OS_CTRL,    OS_ALT,     OS_GUI, KC_PGUP,
+        KC_DEL,  KC_SCLN, S(KC_SCLN),         KC_LBRC,          KC_RBRC, KC_3GRV,                        KC_MINS, S(KC_1), S(KC_COMM), S(KC_DOT), S(KC_SLSH), KC_PGDN,
+                                              _______,          _______,  KC_ENT,                        _______, _______, _______
     ),
 
     [_NUM] = LAYOUT_split_3x6_3_ex2(
-        KC_ESC,  KC_TAB,  KC_LEFT,  KC_DOT,   KC_RGHT, S(KC_MINS), KC_PSCR,    KC_HOME,  KC_INS,  VSC_EVAL, KC_7, KC_8, KC_9, S(KC_EQL),
-        KC_TAB,  OS_GUI,  OS_ALT,   OS_CTRL,  OS_SHFT, MO_NAV,     KC_END,     KC_INS,   KC_PGUP, REV_COLON, KC_4, KC_5, KC_6, KC_MINS,
-        KC_DEL,  MW_UNDO, _______,  KC_COMM,  REV_COLON, MW_REDO,  KC_PGDN,    KC_MINS,  KC_1,    KC_2,     KC_3, _______,
-                      _______,      _______,   _______,             KC_ENT,     KC_BSPC,  KC_0
+        KC_ESC,   KC_TAB, KC_LEFT,   KC_DOT,   KC_RGHT, S(KC_MINS), KC_PSCR,    KC_HOME,   VSC_EVAL, KC_7, KC_8, KC_9, S(KC_EQL),  KC_INS,
+        KC_TAB,   OS_GUI,  OS_ALT,  OS_CTRL,   OS_SHFT,     MO_NAV,  KC_END,     KC_INS,  REV_COLON, KC_4, KC_5, KC_6,  KC_MINS,  KC_PGUP,
+        KC_DEL,  MW_UNDO, _______,  KC_COMM, REV_COLON,    MW_REDO,                         KC_MINS, KC_1, KC_2, KC_3,  _______,  KC_PGDN,
+                                    _______,   _______,    _______,                          KC_ENT, KC_BSPC, KC_0
     ),
 
     [_FUN] = LAYOUT_split_3x6_3_ex2(
-        KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_PSCR,    KC_HOME,  KC_INS,  TO(_NAVLH), KC_F7, KC_F8, KC_F9, KC_F12,
-        KC_TAB,  OS_GUI,  OS_ALT,  OS_CTRL, OS_SHFT, _______, KC_END,     KC_INS,   KC_PGUP, _______,    KC_F4, KC_F5, KC_F6, KC_F11,
-        KC_DEL,  KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_PGDN,    _______,  KC_F1,   KC_F2,     KC_F3, KC_F10,
-                      _______,      _______, _______,          _______,    KC_CAPS,  _______
+        KC_ESC,   KC_1,    KC_2,     KC_3,    KC_4,    KC_5,    KC_PSCR,    KC_HOME, TO(_NAVLH), KC_F7, KC_F8, KC_F9, KC_F12, KC_INS,
+        KC_TAB, OS_GUI,  OS_ALT,  OS_CTRL, OS_SHFT, _______,     KC_END,     KC_INS,    _______, KC_F4, KC_F5, KC_F6, KC_F11, KC_PGUP,
+        KC_DEL,   KC_6,    KC_7,     KC_8,    KC_9,    KC_0,                            _______, KC_F1, KC_F2, KC_F3, KC_F10, KC_PGDN,
+                                  _______, _______, _______,                            _______, KC_CAPS, _______
     ),
 
     [_NAV] = LAYOUT_split_3x6_3_ex2(
-        KC_ESC,  SW_WIN,  PRV_TAB, CLS_WIN, NXT_TAB, SW_APP,    KC_PSCR,    KC_HOME,  KC_INS,  KC_PGUP, KC_HOME, KC_UP,   KC_END,  KC_DWRD,
-        KC_TAB,  OS_GUI,  OS_ALT,  OS_CTRL, OS_SHFT, OSL_NAVWIN, KC_END,     KC_INS,   KC_PGUP, KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT, KC_SPC,
-        KC_DEL,  MW_UNDO, MW_CUT,  MW_COPY, MW_PSTE, MW_REDO,   KC_PGDN,    KC_ESC,   KC_BSPC, KC_ENT,  KC_TAB,  KC_DEL,
-                     MW_MKLNK,     _______, MW_NWTB,            KC_ENT,     KC_BSPC,  _______
+        KC_ESC,  SW_WIN, PRV_TAB, CLS_WIN, NXT_TAB,     SW_APP, KC_PSCR,    KC_HOME,  KC_PGUP, KC_HOME,   KC_UP,  KC_END, KC_DWRD,  KC_BSPC,
+        KC_TAB,  OS_GUI,  OS_ALT, OS_CTRL, OS_SHFT, OSL_NAVWIN,  KC_END,     KC_INS,  KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT,  KC_SPC,   KC_ENT,
+        KC_DEL, MW_UNDO,  MW_CUT, MW_COPY, MW_PSTE,    MW_REDO,                        KC_ESC, KC_BSPC,  KC_ENT,  KC_TAB,  KC_DEL,  OS_SHFT,
+                                 MW_MKLNK, _______,    MW_NWTB,                        KC_ENT, KC_BSPC,  _______
     ),
 
+     // _NAVWIN is meant to be entered momentarily from within the _NAV
+    // layer for one purpose: switching to a specific window/application.
+    // This lets me perform a scenario like this:
+    // - Be in VSCode
+    // - Enter _NAV
+    // - Select text
+    // - Copy
+    // - Momentarily enter _NAVWIN
+    // - Activate Chrome
+    // - Leave _NAVWIN (so that I'm back in _NAV)
+    // - Make a new tab
+    // - Paste
+    // - Press enter
+    //
+    // Without _NAVWIN, I would have had to enter the _NUM layer to be
+    // able to switch windows, then re-enter _NAV. I don't like bouncing
+    // between layers like that if I can avoid it.
+    //
+    // Note: alt+# only works through a separate app (I happen to use
+    // Raycast for now)
+
     [_NAVWIN] = LAYOUT_split_3x6_3_ex2(
-        KC_ESC,  A(KC_Q), A(KC_W), A(KC_F), A(KC_P), A(KC_B),    KC_PSCR,    KC_HOME,  KC_INS,  A(KC_J), A(KC_7), A(KC_8), A(KC_9), A(KC_QUOT),
-        KC_TAB,  OS_GUI,  OS_ALT,  OS_CTRL, OS_SHFT, _______,    KC_END,     KC_INS,   KC_PGUP, A(KC_M), A(KC_4), A(KC_5), A(KC_6), A(KC_O),
-        KC_DEL,  A(KC_Z), A(KC_X), A(KC_C), A(KC_D), A(KC_V),    KC_PGDN,    A(KC_K),  A(KC_1), A(KC_2), A(KC_3), A(KC_SLSH),
-                      _______,      _______, _______,             _______,    _______,  _______
+        KC_ESC,  A(KC_Q), A(KC_W), A(KC_F), A(KC_P), A(KC_B),    KC_PSCR,    KC_HOME,  A(KC_J), A(KC_7), A(KC_8), A(KC_9), A(KC_QUOT), KC_INS,
+        KC_TAB,   OS_GUI,  OS_ALT, OS_CTRL, OS_SHFT, _______,    KC_END,     KC_INS,   A(KC_M), A(KC_4), A(KC_5), A(KC_6),    A(KC_O), KC_PGUP,
+        KC_DEL,  A(KC_Z), A(KC_X), A(KC_C), A(KC_D), A(KC_V),                          A(KC_K), A(KC_1), A(KC_2), A(KC_3), A(KC_SLSH), KC_PGDN,
+                                   _______, _______, _______,                          _______, _______, _______
     ),
 
     [_NAVLH] = LAYOUT_split_3x6_3_ex2(
-        KC_ESC,  TO(_BASE), KC_HOME, KC_UP,   KC_END, KC_PGUP,    KC_PSCR,    KC_HOME,  KC_INS,  _______, _______, _______, _______, _______,
-        KC_TAB,  KC_SPC,    KC_LEFT, KC_DOWN, KC_RGHT, KC_PGDN,    KC_END,     KC_INS,   KC_PGUP, _______, OS_SHFT, OS_CTRL, OS_ALT,  OS_GUI,
-        KC_DEL,  KC_DEL,    KC_TAB,  KC_ENT,  KC_BSPC, KC_ESC,    KC_PGDN,    _______,  _______, _______, _______, _______,
-                    TO(_BASE),       TO(_BASE), _______,           KC_ENT,     KC_BSPC,  _______
+        KC_ESC, TO(_BASE), KC_HOME,   KC_UP,  KC_END, KC_PGUP,  KC_PSCR,    KC_HOME,   _______, _______, _______, _______, _______,   KC_INS,
+        KC_TAB,    KC_SPC, KC_LEFT, KC_DOWN, KC_RGHT, KC_PGDN,  KC_END,      KC_INS,   _______, OS_SHFT, OS_CTRL,  OS_ALT,  OS_GUI,  KC_PGUP,
+        KC_DEL,    KC_DEL,  KC_TAB,  KC_ENT, KC_BSPC,  KC_ESC,                         _______, _______, _______, _______, _______,  KC_PGDN,
+                                  TO(_BASE),TO(_BASE),_______,                          KC_ENT, KC_BSPC, _______
     ),
 
     [_MDIA] = LAYOUT_split_3x6_3_ex2(
-        KC_ESC,  QK_BOOT, _______, RGB_TOG, _______, CG_TOGG,    KC_PSCR,    KC_HOME,  KC_INS,  KC_WH_U, KC_MPRV, KC_MS_U, KC_MNXT, KC_PSCR,
-        KC_TAB,  OS_GUI,  OS_ALT,  OS_CTRL, OS_SHFT, _______,    KC_END,     KC_INS,   KC_PGUP, KC_WH_D, KC_MS_L, KC_MS_D, KC_MS_R, _______,
-        KC_DEL,  _______, _______, _______, _______, _______,    KC_PGDN,    KC_MUTE,  KC_VOLD, KC_MPLY, KC_VOLU, _______,
-                        _______,   _______, _______,             KC_BTN3,    KC_BTN1,  KC_BTN2
+        KC_ESC,  QK_BOOT, _______,  RGB_TOG, _______, CG_TOGG,  KC_PSCR,    KC_HOME,   KC_WH_U, KC_MPRV, KC_MS_U, KC_MNXT, KC_PSCR,  KC_INS,
+        KC_TAB,   OS_GUI,  OS_ALT,  OS_CTRL, OS_SHFT, _______,  KC_END,      KC_INS,   KC_WH_D, KC_MS_L, KC_MS_D, KC_MS_R, _______, KC_PGUP,
+        KC_DEL,  _______, _______,  _______, _______, _______,                         KC_MUTE, KC_VOLD, KC_MPLY, KC_VOLU, _______, KC_PGDN,
+                                    _______, _______, _______,                         KC_BTN3, KC_BTN1, KC_BTN2
     )
 };
 // clang-format on
