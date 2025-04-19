@@ -112,7 +112,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 // Tapping a dual-function key twice will enable its hold action rather than
 // repeatedly invoking its tap action.
-#define TAPPING_FORCE_HOLD
+// #define TAPPING_FORCE_HOLD
 
 // Some common bigrams should have lower COMBO_TERMs so that I only activate the
 // combo when I really mean to.
