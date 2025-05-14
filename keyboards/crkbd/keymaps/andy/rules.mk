@@ -1,16 +1,18 @@
-# OLED_ENABLE = yes
-# OLED_DRIVER = SSD1306
-
-# RGBLIGHT_ENABLE     = yes
-RGB_MATRIX_ENABLE  = yes
 COMBO_ENABLE = yes
 SPLIT_KEYBOARD = yes
+MOUSEKEY_ENABLE = yes
 
-# Enabling link-time optimization saves about 3 kilobytes.
-# https://thomasbaart.nl/2018/12/01/reducing-firmware-size-in-qmk/
-EXTRAFLAGS += -flto
+# Increase firmware space and efficiency
+LTO_ENABLE = yes
 
-SRC += swapper.c
-SRC += oneshot.c
+# Enable features we need
+NKRO_ENABLE = yes         # USB N-key rollover
+OS_DETECTION_ENABLE = no  # Removed OS detection which is being replaced with manual toggle (CG_TOGG)
 
-OS_DETECTION_ENABLE = yes
+# Disable all LED and RGB features to save space
+RGBLIGHT_ENABLE = no
+RGB_MATRIX_ENABLE = no
+BACKLIGHT_ENABLE = no
+LED_MATRIX_ENABLE = no
+CONSOLE_ENABLE = no       # Disable debug console
+COMMAND_ENABLE = no       # Disable command processing
